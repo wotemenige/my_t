@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "535dc83cd18f0028abd99af6ba1d740d",
+    "content-hash": "632dcb015736a1e3b1d7f0573a7604c6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1998,6 +1998,54 @@
             "time": "2020-10-18T11:50:25+00:00"
         },
         {
+            "name": "liaosp/express",
+            "version": "v2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/liaoshengping/express-sdk.git",
+                "reference": "c91cf90d3263614716dd6f252002e601c046a188"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/liaoshengping/express-sdk/zipball/c91cf90d3263614716dd6f252002e601c046a188",
+                "reference": "c91cf90d3263614716dd6f252002e601c046a188",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "guzzlehttp/guzzle": ">=5.0.0",
+                "php": ">=7.0",
+                "php-curl-class/php-curl-class": "8.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Liaosp\\Express\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "liaosp",
+                    "email": "1194008361@qq.com"
+                }
+            ],
+            "description": "免key，可扩展快递物流查询，第三方快递100，爱查快递，百度快递",
+            "support": {
+                "issues": "https://github.com/liaoshengping/express-sdk/issues",
+                "source": "https://github.com/liaoshengping/express-sdk/tree/master"
+            },
+            "time": "2020-06-16T08:10:03+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "2.1.1",
             "source": {
@@ -2614,6 +2662,83 @@
                 }
             ],
             "time": "2020-09-28T09:20:16+00:00"
+        },
+        {
+            "name": "php-curl-class/php-curl-class",
+            "version": "8.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-curl-class/php-curl-class.git",
+                "reference": "73bf10e2652ad2261cbab7fbf242b76f0e7ee359"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-curl-class/php-curl-class/zipball/73bf10e2652ad2261cbab7fbf242b76f0e7ee359",
+                "reference": "73bf10e2652ad2261cbab7fbf242b76f0e7ee359",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "ext-gd": "*",
+                "phpunit/phpunit": "*",
+                "squizlabs/php_codesniffer": "*"
+            },
+            "suggest": {
+                "ext-mbstring": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Curl\\": "src/Curl/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Unlicense"
+            ],
+            "authors": [
+                {
+                    "name": "Zach Borboa"
+                }
+            ],
+            "description": "PHP Curl Class makes it easy to send HTTP requests and integrate with web APIs.",
+            "homepage": "https://github.com/php-curl-class/php-curl-class",
+            "keywords": [
+                "API-Client",
+                "api",
+                "class",
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http-client",
+                "http-proxy",
+                "json",
+                "php",
+                "php-curl",
+                "php-curl-library",
+                "proxy",
+                "requests",
+                "restful",
+                "web-scraper",
+                "web-scraping ",
+                "web-service",
+                "xml"
+            ],
+            "support": {
+                "issues": "https://github.com/php-curl-class/php-curl-class/issues",
+                "source": "https://github.com/php-curl-class/php-curl-class/tree/8.6.0"
+            },
+            "time": "2019-05-12T08:22:01+00:00"
         },
         {
             "name": "phpoption/phpoption",
