@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Service\InterService;
+use App\Models\User;
+use Liaosp\Express\Express;
 
 
 class InviteController extends Controller
@@ -46,6 +48,14 @@ class InviteController extends Controller
     //用户第三个
     public function user_three_invite(Request $request)
     {
-
+        $obj = new Express();
+//        $a = $obj->number('75355662900611'); //默认百度快递，其他快递貌似没啥用了
+//
+//        $obj->setExpress('kuaidi100');
+//        $d = $obj->number('75355662900611');
+        $obj->setExpress('kuaidi100');
+        $obj->setExpress('ickd');
+        $d = $obj->number('71291609210123');
+        dd($d);
     }
 }
