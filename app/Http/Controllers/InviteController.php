@@ -38,6 +38,7 @@ class InviteController extends Controller
 
             if( $userId != $i)
                 dd("9999邀请码解密错误".$i);
+
             $i++;
         }
 
