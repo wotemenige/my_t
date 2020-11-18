@@ -22,6 +22,7 @@ use App\Http\Controllers as CC;
 Route::group(['prefix'=>'invite'],function(){
     Route::get('user_invite',[CC\InviteController::class,'user_invite']);
     Route::get('user_two_invite',[CC\InviteController::class,'user_two_invite']);
+    Route::get('user_three_invite',[CC\InviteController::class,'user_three_invite']);
 });
 
 

@@ -118,7 +118,7 @@ return [
     */
 
     'redis' => [
-
+        //现在改成默认是phpredis了
         'client' => env('REDIS_CLIENT', 'phpredis'),
 
         'options' => [
@@ -132,6 +132,14 @@ return [
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_DB', '0'),
+        ],
+
+        'publisher'=>[
+            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'password' => env('REDIS_PASSWORD', null),
+            'port' => env('REDIS_PORT', 6379),
+            'database' => 0,
+            'read_write_timeout'=>0,//长连接不要断
         ],
 
         'cache' => [
