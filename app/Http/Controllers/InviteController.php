@@ -37,7 +37,8 @@ class InviteController extends Controller
             $userId = app('invite_code')->deCode($code); // 邀请码获取用户id
 
             if( $userId != $i)
-                dd("邀请码解密错误".$i);
+                dd("1313邀请码解密错误".$i);
+
             $i++;
         }
 
