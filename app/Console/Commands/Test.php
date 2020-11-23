@@ -38,23 +38,23 @@ class Test extends Command
      */
     public function handle()
     {
+        $a = Redis::setex('aaaaaaaaaaa',3,'哈哈哈');
+//        $a = Redis::setex('aaaaaaaa',5,'哈哈哈');
+        $redis = new \Redis();
+        $redis->connect('127.0.1.1',6379);
+        $redis->setOption(\Redis::OPT_READ_TIMEOUT, -1);
+        $redis->setex('aaaa',3,'哈哈');
+        $pattern = '__keyevent@*__:expired';
 
-//          $redis=Redis::connection('publisher');//创建新的实例
-        $a = Redis::setex('aaaaaaaaaaa',15,'哈哈哈');
-//        var_dump($a);die;
-//        ini_set('default_socket_timeout', -1);  //不超时
-       while(true) {
-           $redis=Redis::connection('publisher');//创建新的实例
-           $redis->psubscribe(['__keyevent@*__:expired'], function ($message, $channel) {
-               var_dump($message,$channel);die;
-//               echo $channel.PHP_EOL;//订阅的频道
-//               echo $message.PHP_EOL;//过期的key
-//               echo '---'.PHP_EOL;
-           });
-//           $a = mt_rand(10,20);
-//           if ($a > 15) {
-//               sleep(1);
-//           }
-       }
+        $redis->psubscribe([$pattern], function ($message, $channel, $chan, $msg)
+        {
+            dd($message, $channel, $chan, $msg);
+        });
+
+//        $redis = Redis::connection('publisher');//创建新的实例
+//        $redis->psubscribe(['__keyevent@*__:expired'], function ($message, $channel) {
+//            var_dump($message);
+//        });
+
     }
 }

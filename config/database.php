@@ -120,7 +120,7 @@ return [
     'redis' => [
         //现在改成默认是phpredis了
         'client' => env('REDIS_CLIENT', 'phpredis'),
-
+//        'client' => 'predis',
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
 //            'prefix' => 'ceshi',
@@ -140,7 +140,7 @@ return [
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', 6379),
             'database' => 0,
-//            'prefix' => 'ceshi',
+            'prefix' => 'ceshi',
 //            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
             'read_write_timeout'=>0,//长连接不要断
         ],
