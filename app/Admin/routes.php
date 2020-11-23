@@ -12,5 +12,7 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
+    $router->resource('books', BookController::class);
+    $router->resource('wechat-users', WechatUserController::class);
 
 });
