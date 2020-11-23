@@ -59,4 +59,21 @@ class InviteController extends Controller
         $d = $obj->number('71291609210123');
         dd($d);
     }
+
+    //用户第四个
+    public function user_four_invite(Request $request)
+    {
+        $a = $request->input('a');
+        $b = '11';
+        if ($a == 'cat') {
+            return new Cat();
+        } elseif ($a == 'dog') {
+            return new Dog();
+        }
+//        self::user_four_invite($a);
+//        self::user_four_invite($b);
+        //生成器模式--建造者模式
+        //
+
+    }
 }
