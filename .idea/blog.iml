@@ -32,6 +32,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/iidestiny/flysystem-oss" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/iidestiny/laravel-filesystem-oss" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/johnlui/aliyun-oss" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jxlwqq/material-ui" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/tinker" />

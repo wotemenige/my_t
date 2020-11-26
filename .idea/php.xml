@@ -129,6 +129,9 @@
       <path value="$PROJECT_DIR$/vendor/tymon/jwt-auth" />
       <path value="$PROJECT_DIR$/vendor/liaosp/express" />
       <path value="$PROJECT_DIR$/vendor/php-curl-class/php-curl-class" />
+      <path value="$PROJECT_DIR$/vendor/johnlui/aliyun-oss" />
+      <path value="$PROJECT_DIR$/vendor/iidestiny/laravel-filesystem-oss" />
+      <path value="$PROJECT_DIR$/vendor/iidestiny/flysystem-oss" />
     </include_path>
   </component>
   <component name="PhpUnit">

@@ -64,7 +64,16 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
-
+        //  private $AccessKeyId = 'LTAIUrJCqTT0oJih';
+        //    private $AccessKeySecret = 'yDbQMUxWgBs6qRLeao4DvhGMr5lzax';
+        'oss' => [
+            'driver' => 'oss',
+            'access_key' => env('OSS_ACCESS_KEY','LTAIUrJCqTT0oJih'),
+            'secret_key' => env('OSS_SECRET_KEY','yDbQMUxWgBs6qRLeao4DvhGMr5lzax'),
+            'endpoint'   => env('OSS_ENDPOINT','oss-cn-beijing.aliyuncs.com'),
+            'bucket'     => env('OSS_BUCKET','tliu'),
+            'isCName'    => env('OSS_IS_CNAME', false), // 如果 isCname 为 false，endpoint 应配置 oss 提供的域名如：`oss-cn-beijing.aliyuncs.com`，否则为自定义域名，，cname 或 cdn 请自行到阿里 oss 后台配置并绑定 bucket
+        ],
     ],
 
     /*
