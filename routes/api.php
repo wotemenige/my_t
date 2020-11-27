@@ -28,15 +28,22 @@ Route::group(['prefix'=>'invite'],function(){
 
 Route::any('wechat/get_access',[AA\WechatController::class,'get_access']);//获取授权
 Route::any('wechat/back_auth',[AA\WechatController::class,'back_auth'])->middleware('web');//授权回调
+
 Route::group(['prefix'=>'wechat','middleware'=>['web','wechat.user']],function(){
     Route::any('book_list',[AA\WechatController::class,'book_list']);//列表
     Route::any('submit_luck_num',[AA\WechatController::class,'submit_luck_num']);//提交数字
     Route::any('book_result',[AA\WechatController::class,'book_result']);//列表
     Route::any('book_record',[AA\WechatController::class,'book_record']);//列表
     Route::any('order_info',[AA\WechatController::class,'order_info']);//列表
+    Route::any('video_list',[AA\WechatController::class,'video_list']);//列表
+    Route::any('video_add',[AA\WechatController::class,'video_add']);//列表
+    Route::any('fileUpload',[AA\WechatController::class,'fileUpload']);//列表
 
 });
 
+Route::any('video_list',[AA\WechatController::class,'video_list']);//列表
+Route::any('video_add',[AA\WechatController::class,'video_add']);//列表
+Route::any('fileUpload',[AA\WechatController::class,'fileUpload']);//列表
 
 //'namespace'=>'App\Http\Controllers'
 //Route::group(['namespace'=>'23322323CC\A322323232323A'],function(){

@@ -54,6 +54,8 @@ class OSS {
     public static function publicUpload($bucketName, $ossKey, $filePath, $options = [])
     {
         $oss = new OSS();
+
+        dd($oss->ossClient);
         $oss->ossClient->setBucket($bucketName);
         return $oss->ossClient->uploadFile($ossKey, $filePath, $options);
     }

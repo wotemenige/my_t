@@ -9,16 +9,20 @@ use App\Models\WechatUser;
 use App\Service\RedisService;
 use Illuminate\Validation\ValidationException;
 use Liaosp\Express\Express;
+use App\Service\UploadFile;
+use App\Models\Video;
 use Session;
 
 
 class WechatController extends Controller
 {
     protected  $app;
+    protected $file;
 
     public function __construct(Request $request)
     {
         $this->app = $this->get_official();
+//        $this->file = $file;
     }
 
     public function get_access(Request $request)
@@ -244,5 +248,62 @@ class WechatController extends Controller
         }
 
         return $data['baidu'];
+    }
+
+    /**
+     * 视频列表
+     * Created by PhpStorm.
+     * User: Liuqingji
+     * Date: 2020/11/27
+     * Time: 12:02 AM
+     */
+    public function video_list(Request $request)
+    {
+        $openid = $request->input('openid');
+        $v_model = Video::instance();
+        $datas = $v_model->video_list($openid);
+        return view('video.list',compact('datas'));
+    }
+
+    /**
+     * 视频添加
+     * Created by PhpStorm.
+     * User: Liuqingji
+     * Date: 2020/11/27
+     * Time: 12:03 AM
+     */
+    public function video_add(Request $request)
+    {
+        return view('video.add');
+    }
+
+    /**
+     * 上传图片
+     * Created by PhpStorm.
+     * User: Liuqingji
+     * Date: 2020/11/26
+     * Time: 10:54 PM
+     */
+    public function fileUpload(Request $request)
+    {
+        $v_model = Video::instance();
+        $openid = $request->input('openid');
+        //进行视频合成
+        //没人10次
+        $count = Video::upload_time($openid);
+
+        if ($count > 9) return ['status'=>0];
+
+        $path = UploadFile::fileUpload($request,'file','png',0);
+
+        if (!$path) {
+            return ['status'=>0];
+        }
+
+
+
+        $v_model->video_add($openid,$path);
+        return ['status'=>200];
+
     }
 }

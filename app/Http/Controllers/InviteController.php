@@ -16,14 +16,11 @@ class InviteController extends Controller
     public function user_invite(Request $request)
     {
 
-//        $a = filesize('/www/wwwroot/blog/public/a.txt');
-//        dd($a);
-        // 在外网上传一个文件并指定 options 如：Content-Type 类型
-// 更多 options 见：https://github.com/johnlui/AliyunOSS/blob/master/src/oss/src/Aliyun/OSS/OSSClient.php#L142-L148
-        $a = OSS::publicUpload('tliu', 'cc/a.txt', '/www/wwwroot/blog/public/a.txt',[
-            'ContentType' => 'application/file',
-]);
-        dd($a);
+        $disk = Storage::disk('oss');
+
+// create a file
+        $d = $disk->put('avatars/aa.txt', file_get_contents('/www/wwwroot/blog/public/a.txt'));
+        dd($d);
 
 //        $v = Redis::hset('bb2','bb','e3434x');
 //        dd($v);
