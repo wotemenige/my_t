@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Service\InterService;
 use App\Models\User;
 use Liaosp\Express\Express;
-
+use Illuminate\Support\Facades\Redis;
+use App\Service\OSS;
 
 class InviteController extends Controller
 {
@@ -14,13 +15,25 @@ class InviteController extends Controller
     //用户邀请
     public function user_invite(Request $request)
     {
-       $inter = new InterService();
-       for ($i=11;$i<1000;$i++) {
-           $code = $inter->enCode($i);
-           echo $code.'<br />';
-           $id = $inter->deCode($code);
-           echo $id.'<br />';
-       }
+
+//        $a = filesize('/www/wwwroot/blog/public/a.txt');
+//        dd($a);
+        // 在外网上传一个文件并指定 options 如：Content-Type 类型
+// 更多 options 见：https://github.com/johnlui/AliyunOSS/blob/master/src/oss/src/Aliyun/OSS/OSSClient.php#L142-L148
+        $a = OSS::publicUpload('tliu', 'cc/a.txt', '/www/wwwroot/blog/public/a.txt',[
+            'ContentType' => 'application/file',
+]);
+        dd($a);
+
+//        $v = Redis::hset('bb2','bb','e3434x');
+//        dd($v);
+//       $inter = new InterService();
+//       for ($i=11;$i<1000;$i++) {
+//           $code = $inter->enCode($i);
+//           echo $code.'<br />';
+//           $id = $inter->deCode($code);
+//           echo $id.'<br />';
+//       }
     }
 
     //测试绑定单例

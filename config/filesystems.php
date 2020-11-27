@@ -65,6 +65,18 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+        'oss'=>[
+            'driver'=>'oss',
+            'access_id'=>'',
+            'access_key'=>'',
+            'bucket'=>'',
+            'endpoint'=>'',
+            'cdnDomain'=>'',
+            'ssl'=>'',
+            'isCName'=> '',
+            'debug'=>'',
+        ],
+
     ],
 
     /*

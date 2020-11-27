@@ -9,6 +9,6 @@ class RedisService
 {
     public static function check_openid($openid)
     {
-        return Redis::set($openid,$openid,1);
+        return Redis::set($openid,$openid,'ex',1,'nx');
     }
 }
