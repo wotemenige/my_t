@@ -38,6 +38,10 @@ class Test extends Command
      */
     public function handle()
     {
+
+        $a = Redis::set('woteme',1,'ex',60,'nx');
+
+        dd($a);
         $a = Redis::setex('aaaaaaaaaaa',3,'哈哈哈');
 //        $a = Redis::setex('aaaaaaaa',5,'哈哈哈');
         $redis = new \Redis();
