@@ -8,26 +8,37 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>我的视频列表</title>
 </head>
-<body>
-<p>~~~~~~~~~~~~~~~~~~~~~~</p>
+<>
 <img src="https://t.liuqingji.top/image/shanshui.jpeg" style="width: 100%;height:100px;">
 <br />
 <br />
-@foreach($data as $da)
-    <span>图片:{{ $data['img_url'] }};&nbsp;视频状态:
+<p style="margin-right:30px;float:right"><a href="{{ url('api/wechat/video_add') }}">点我去视频合成&nbsp;</a></p>
+<br />
+<br />
+<span>视频示例</span>
+<video width="100" height="100" controls>
+    <source src="https://tliu.oss-cn-beijing.aliyuncs.com//www/wwwroot/blog/public/video/1606562128.mp4" type="video/mp4">
+</video>
+<br />
+<br />
+@foreach($datas as $data)
+    <span>图片:上传成功;&nbsp;视频状态:
     @if ($data['status'] == 0)
-       等待合成中
+            <span style="color:grey">等待合成中</span><br />
     @elseif( $data['status'] == 1)
-       合成完成
+            <span style="color:grey">正在合成</span><br />
+    @elseif( $data['status'] == 2)
+            {{--<a href="javascript:void(0);" onclick="downVideo('{{ $data['video_url'] }}','my.mp4')">合成成功-点击下载</a>--}}
+        {{--、、//<p class="code-btn copy" id="codeBtn" data-clipboard-target="#input">复制邀请码</p>--}}
+            <p style="word-break: break-word;color:silver">合成成功；视频链接:      {{ $data['video_url'] }}</p>
+            <video width="200" height="100" controls>
+            <source src="{{ $data['video_url'] }}" type="video/mp4">
+            </video>
+        <br />
     @else
-        合成失败
+            <span style="color:grey">失败</span><br />
     @endif
     <br />
 @endforeach
-
-@if (!count($data))
-    <p style="font-size:25px;">还没有提交过信息奥</p>
-@endif
-<p style="margin-top: 50%;float:right"><a href="{{ url('api/wechat/book_record') }}">    查看我的中奖记录&nbsp;&nbsp;</a></p>
 </body>
 </html>

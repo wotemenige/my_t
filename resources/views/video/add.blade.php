@@ -17,7 +17,7 @@
 <body>
 <div class="container">
     <div class="page-header">
-        <h3>添加一张图片吧</h3>
+        <h3>添加图片</h3>
         <form id="ccc">
             <div class="form-group" id="uploadForm" enctype='multipart/form-data'>
                 <div class="h4">图片预览</div>
@@ -48,6 +48,8 @@
         //比较简洁，细节可自行完善
         $('#uploadSubmit').click(function () {
             var data = new FormData(document.getElementById('ccc'));
+            alert('正在上传中');
+
             $.ajax({
                 url: '/api/wechat/fileUpload',
                 type: 'POST',

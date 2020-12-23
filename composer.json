@@ -13,6 +13,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "hhxsv5/laravel-s": "~3.7.0",
         "iidestiny/laravel-filesystem-oss": "^2.0",
         "johnlui/aliyun-oss": "~2.0",
         "jxlwqq/material-ui": "^1.0",

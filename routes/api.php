@@ -45,17 +45,4 @@ Route::any('video_list',[AA\WechatController::class,'video_list']);//列表
 Route::any('video_add',[AA\WechatController::class,'video_add']);//列表
 Route::any('fileUpload',[AA\WechatController::class,'fileUpload']);//列表
 
-//'namespace'=>'App\Http\Controllers'
-//Route::group(['namespace'=>'23322323CC\A322323232323A'],function(){
-//	Route::get('log',[CC\ApiController::class,'log']);//要不就这样
-//	// Route::get('log',"ApiController@log");
-//	// Route::get('log',[ApiController::class,'log']);//这个不行
-//});
-//
-//Route::group(['middleware' => 'auth.jwt'], function() {
-//    Route::get('user', [CC\ApiController::class,'getAuthUser']);
-//});
-//
-//Route::get('logout', [CC\ApiController::class,'logout']);
-//Route::get('user', [CC\ApiController::class,'getAuthUser']);
 

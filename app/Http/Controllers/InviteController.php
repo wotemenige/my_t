@@ -15,23 +15,46 @@ class InviteController extends Controller
     //用户邀请
     public function user_invite(Request $request)
     {
-
-        $disk = Storage::disk('oss');
-
-// create a file
-        $d = $disk->put('avatars/aa.txt', file_get_contents('/www/wwwroot/blog/public/a.txt'));
-        dd($d);
-
-//        $v = Redis::hset('bb2','bb','e3434x');
-//        dd($v);
-//       $inter = new InterService();
-//       for ($i=11;$i<1000;$i++) {
-//           $code = $inter->enCode($i);
-//           echo $code.'<br />';
-//           $id = $inter->deCode($code);
-//           echo $id.'<br />';
-//       }
+        $id = 1;
+        $data = User::where('id',$id)->first();
+        $datas = User::get()->toArray();
+        $datass = User::all();
+        dd($data,$datas,$datass);
     }
+
+    public function get_data()
+    {
+        $start = 0;
+        $limit = 100;
+        $datas = User::offset($start)->limit($limit)->get();
+
+        while ($datas) {
+            foreach ($datas as $data) {
+                yield $data;
+
+            }
+            $take = ++$start * 100;
+            $datas = User::offset($take)->limit($limit)->get()->toArray();
+        }
+    }
+
+    public function get_test()
+    {
+        $start = 0;
+        $limit = 100;
+        $datas = User::offset($start)->limit($limit)->get();
+
+        while ($datas) {
+            foreach ($datas as $data) {
+              var_dump($data);
+              echo '<br />';
+
+            }
+            $take = ++$start * 100;
+            $datas = User::offset($take)->limit($limit)->get()->toArray();
+        }
+    }
+
 
     //测试绑定单例
     public function user_two_invite(Request $request)

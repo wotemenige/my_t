@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32961059d3addcec7fbf4d3ed48ee00e",
+    "content-hash": "966f8cc4529bf1676abcaf6c2462ffde",
     "packages": [
         {
             "name": "aliyuncs/oss-sdk-php",
@@ -1416,6 +1416,108 @@
                 "url"
             ],
             "time": "2020-09-30T07:37:11+00:00"
+        },
+        {
+            "name": "hhxsv5/laravel-s",
+            "version": "v3.7.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hhxsv5/laravel-s.git",
+                "reference": "ef36d20035bb90ab21da83e8894e71b4e6c73ba6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hhxsv5/laravel-s/zipball/ef36d20035bb90ab21da83e8894e71b4e6c73ba6",
+                "reference": "ef36d20035bb90ab21da83e8894e71b4e6c73ba6",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-pcntl": "*",
+                "php": ">=5.5.9",
+                "swoole/ide-helper": "@dev",
+                "symfony/console": ">=2.7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.8.36"
+            },
+            "suggest": {
+                "ext-inotify": "Inotify, used to real-time reload.",
+                "ext-swoole": "Coroutine based Async PHP programming framework, require >= 1.7.19."
+            },
+            "bin": [
+                "bin/fswatch"
+            ],
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Hhxsv5\\LaravelS\\Illuminate\\LaravelSServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hhxsv5\\LaravelS\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Xie Biao",
+                    "email": "hhxsv5@sina.com"
+                }
+            ],
+            "description": "🚀 LaravelS is an out-of-the-box adapter between Swoole and Laravel/Lumen.",
+            "homepage": "https://github.com/hhxsv5/laravel-s",
+            "keywords": [
+                "LaravelS",
+                "async",
+                "coroutine",
+                "http",
+                "inotify",
+                "laravel",
+                "laravel-s",
+                "lumen",
+                "performance",
+                "process",
+                "server",
+                "swoole",
+                "task",
+                "tcp",
+                "timer",
+                "udp",
+                "websocket"
+            ],
+            "support": {
+                "issues": "https://github.com/hhxsv5/laravel-s/issues",
+                "source": "https://github.com/hhxsv5/laravel-s"
+            },
+            "funding": [
+                {
+                    "url": "https://gitee.com/hhxsv5/laravel-s?donate=true",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.blockchain.com/btc/address/33owCwMDZBikNe3SY1nnyJ64cEyP7i3mcU",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.paypal.me/hhxsv5",
+                    "type": "custom"
+                }
+            ],
+            "time": "2020-08-12T04:00:13+00:00"
         },
         {
             "name": "iidestiny/flysystem-oss",
@@ -3830,6 +3932,50 @@
                 "mailer"
             ],
             "time": "2019-11-12T09:31:26+00:00"
+        },
+        {
+            "name": "swoole/ide-helper",
+            "version": "4.5.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swoole/ide-helper.git",
+                "reference": "ab2eb4c142681e8df0183dd583579fc4c613cd36"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swoole/ide-helper/zipball/ab2eb4c142681e8df0183dd583579fc4c613cd36",
+                "reference": "ab2eb4c142681e8df0183dd583579fc4c613cd36",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "~6.5.0",
+                "laminas/laminas-code": "~3.4.0",
+                "squizlabs/php_codesniffer": "~3.5.0",
+                "symfony/filesystem": "~4.0"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Team Swoole",
+                    "email": "team@swoole.com"
+                }
+            ],
+            "description": "IDE help files for Swoole.",
+            "support": {
+                "issues": "https://github.com/swoole/ide-helper/issues",
+                "source": "https://github.com/swoole/ide-helper/tree/4.5.8"
+            },
+            "time": "2020-11-26T06:12:18+00:00"
         },
         {
             "name": "symfony/cache",

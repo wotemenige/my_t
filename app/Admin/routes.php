@@ -14,5 +14,5 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('books', BookController::class);
     $router->resource('wechat-users', WechatUserController::class);
-
+    $router->get('/test', 'TestController@index')->name('test');
 });

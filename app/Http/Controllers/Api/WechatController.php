@@ -292,7 +292,7 @@ class WechatController extends Controller
         //没人10次
         $count = Video::upload_time($openid);
 
-        if ($count > 9) return ['status'=>0];
+//        if ($count > 9) return ['status'=>0];
 
         $path = UploadFile::fileUpload($request,'file','png',0);
 

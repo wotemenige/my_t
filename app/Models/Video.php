@@ -42,4 +42,29 @@ class Video extends Model
         $data = self::where('openid',$openid)->get()->toArray();
         return $data;
     }
+
+    /**
+     * 视频添加
+     * Created by PhpStorm.
+     * User: Liuqingji
+     * Date: 2020/11/27
+     * Time: 12:54 AM
+     */
+    public function video_add($openid,$path)
+    {
+        self::create(['openid'=>$openid,'img_ur'=>$path['path']]);
+    }
+
+    /**
+     * Created by PhpStorm.
+     * User: Liuqingji
+     * Date: 2020/11/27
+     * Time: 1:14 AM
+     * 上传次数
+     */
+    public static function upload_time($openid)
+    {
+        $count = self::where('openid',$openid)->count();
+        return $count;
+    }
 }
